@@ -45,3 +45,4 @@ Then, push the image:
 ```bash
 docker push your-dockerhub-username/demo-app:latest
 ```
+# A small change to test the workflow
