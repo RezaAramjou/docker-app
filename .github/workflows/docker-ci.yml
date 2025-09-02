@@ -35,6 +35,5 @@ jobs:
         run: sleep 5
 
       # Step 5: Runs a smoke test by sending a request to the /health endpoint
-      # The -f flag makes curl fail with an error if the HTTP response is not successful
       - name: Smoke test
         run: curl -f http://localhost:3000/health
