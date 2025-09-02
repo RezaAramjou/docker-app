@@ -1,11 +1,15 @@
-from flask import Flask
-import os
+from flask import Flask, jsonify
 
 app = Flask(__name__)
 
 @app.route('/')
-def hello_world():
-    return 'Hello, world from a Docker container!'
+def home():
+    return "Hello from demo app"
+
+@app.route('/health')
+def health_check():
+    return jsonify({"status": "ok"}), 200
 
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0', port=int(os.environ.get('PORT', 3000)))
+    # Listen on all available network interfaces and on port 3000
+    app.run(host='0.0.0.0', port=3000)
